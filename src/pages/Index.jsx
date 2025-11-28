@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { supabase } from "@/integrations/supabase/client";
-import { RouteForm } from "@/components/RouteForm";
-import { RouteList } from "@/components/RouteList";
-import { RouteDetail } from "@/components/RouteDetail";
-import { Button } from "@/components/ui/button";
+import { supabase } from "../integrations/supabase/client";
+import { RouteForm } from "../components/RouteForm";
+import { RouteList } from "../components/RouteList";
+import { RouteDetail } from "../components/RouteDetail";
+import { Button } from "../components/ui/button";
 import { LogOut } from "lucide-react";
 import { toast } from "sonner";
 
