@@ -1,0 +1,125 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 210 25% 98%;
+    --foreground: 210 30% 12%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 210 30% 12%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 210 30% 12%;
+
+    --primary: 203 84% 31%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 174 56% 47%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 210 20% 96%;
+    --muted-foreground: 210 15% 45%;
+
+    --accent: 174 56% 47%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 210 20% 88%;
+    --input: 210 20% 88%;
+    --ring: 203 84% 31%;
+
+    --radius: 0.75rem;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(203 84% 31%), hsl(174 56% 47%));
+    --gradient-hero: linear-gradient(135deg, hsl(203 84% 31%), hsl(203 84% 45%));
+    --gradient-subtle: linear-gradient(180deg, hsl(210 25% 98%), hsl(210 20% 96%));
+
+    /* Shadows */
+    --shadow-card: 0 4px 12px -2px hsl(210 20% 20% / 0.08);
+    --shadow-elevated: 0 10px 30px -5px hsl(203 84% 31% / 0.15);
+
+    /* Animation */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .dark {
+    --background: 210 30% 8%;
+    --foreground: 210 25% 95%;
+
+    --card: 210 25% 12%;
+    --card-foreground: 210 25% 95%;
+
+    --popover: 210 25% 12%;
+    --popover-foreground: 210 25% 95%;
+
+    --primary: 174 56% 47%;
+    --primary-foreground: 210 30% 8%;
+
+    --secondary: 203 84% 45%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 210 25% 16%;
+    --muted-foreground: 210 15% 60%;
+
+    --accent: 174 56% 47%;
+    --accent-foreground: 210 30% 8%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 210 25% 20%;
+    --input: 210 25% 20%;
+    --ring: 174 56% 47%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+}
+
+/* Leaflet CSS */
+@import 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.css';
+
+/* Custom animations */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-slide-up {
+  animation: slideUp 0.4s ease-out;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.3s ease-out;
+}
